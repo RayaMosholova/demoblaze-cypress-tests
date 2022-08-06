@@ -9,8 +9,8 @@
   "author": "Raya Mosholova",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^10.4.0",
     "@badeball/cypress-cucumber-preprocessor": "^12.0.0",
-    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.3"
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.3",
+    "cypress": "^10.4.0"
   }
 }
