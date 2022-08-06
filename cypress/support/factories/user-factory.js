@@ -1,4 +1,4 @@
 export const defaultUser = {
-    username: 'raya@mailinator.com',
+    username: 'defaultUser',
     password: 'Test123!'
 }
