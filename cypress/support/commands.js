@@ -1,25 +1,13 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import { buttonInNavigationMenu, itemsOnHomepage, loggedInUsername } from "./page-objects/homepage"
+import { loginModal, loginModalWindow } from "./page-objects/login-modal"
+
+Cypress.Commands.add('login', (user) => {
+    cy.visit('/')
+    cy.get(buttonInNavigationMenu).contains('Log in').click()
+    cy.wait(500)
+    cy.get(loginModal.usernameField).type(user.username)
+    cy.get(loginModal.passwordField).type(user.password)
+    cy.get(loginModal.loginButton).click()
+    cy.get(loginModalWindow).should('not.be.visible')
+    cy.get(loggedInUsername).should('exist').and('have.text', `Welcome ${user.username}`)
+})
