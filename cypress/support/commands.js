@@ -1,9 +1,9 @@
-import { buttonInNavigationMenu, itemsOnHomepage, loggedInUsername } from "./page-objects/homepage"
+import { loggedInUsername, navMenuButton } from "./page-objects/homepage"
 import { loginModal, loginModalWindow } from "./page-objects/login-modal"
 
 Cypress.Commands.add('login', (user) => {
     cy.visit('/')
-    cy.get(buttonInNavigationMenu).contains('Log in').click()
+    cy.get(navMenuButton).contains('Log in').click()
     cy.wait(500)
     cy.get(loginModal.usernameField).type(user.username)
     cy.get(loginModal.passwordField).type(user.password)
