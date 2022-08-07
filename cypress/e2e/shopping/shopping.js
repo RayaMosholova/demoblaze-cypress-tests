@@ -32,44 +32,6 @@ And('the cart is emptied', () => {
     })
 })
 
-When('the user adds "samsung galaxy s6" and "htc one m9" to the cart', () => {
-    cy.get('@login').then(response => {
-        const authToken = response.body.split(': ')[1]
-        cy.request('POST', 'https://api.demoblaze.com/addtocart', {
-            id: products.galaxyS6.id,
-            cookie: authToken,
-            prod_id: products.galaxyS6.prod_id,
-            flag: true
-        }).then(response => {
-            expect(response.status).to.eq(200)
-        })
-
-        cy.request('POST', 'https://api.demoblaze.com/addtocart', {
-            id: products.htc.id,
-            cookie: authToken,
-            prod_id: products.htc.prod_id,
-            flag: true
-        }).then(response => {
-            expect(response.status).to.eq(200)
-        })
-    })
-})
-
-Then('these items are placed in the cart', () => {
-    cy.get('@login').then(response => {
-        const authToken = response.body.split(': ')[1]
-        cy.request('POST', 'https://api.demoblaze.com/viewcart', {
-            cookie: authToken,
-            flag: true
-        }).then(response => {
-            [products.galaxyS6.id, products.htc.id].forEach(id => {
-                const found = response.body['Items'].find(product => product.id === id)
-                expect(found).not.to.be.undefined
-            })
-        })
-    })
-})
-
 When('the user adds few items to the cart', () => {
     cy.get('@login').then(response => {
         const authToken = response.body.split(': ')[1]
@@ -94,7 +56,7 @@ When('the user adds few items to the cart', () => {
 
 })
 
-Then('the cart is not empty', () => {
+Then('these items are placed in the cart', () => {
     cy.get('@login').then(response => {
         const authToken = response.body.split(': ')[1]
         cy.request('POST', 'https://api.demoblaze.com/viewcart', {
