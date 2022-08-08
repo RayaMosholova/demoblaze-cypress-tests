@@ -1,7 +1,7 @@
 import { Given, When, Then, And } from '@badeball/cypress-cucumber-preprocessor'
-import { defaultUser } from '../../support/factories/user-factory'
 import { cartItems, priceRows, totalPrice } from '../../support/page-objects/cart'
 import { addItemsToCart, navMenuButton } from '../../support/page-objects/homepage'
+import { defaultUser } from '../../fixtures/users.json'
 
 Given('the user is logged in', () => {
     // the below programatic login is made in order to be able to empty the cart for the logged user further in the tests 
