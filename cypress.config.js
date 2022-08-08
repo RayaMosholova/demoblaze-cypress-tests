@@ -22,4 +22,5 @@ module.exports = defineConfig({
     specPattern: "**/*.feature",
     setupNodeEvents,
   },
+  video: false,
 });
