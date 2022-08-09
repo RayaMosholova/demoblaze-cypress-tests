@@ -1,1 +1,4 @@
 node_modules
+screenshots
+cucumber-messages.ndjson
+cucumber-report.html

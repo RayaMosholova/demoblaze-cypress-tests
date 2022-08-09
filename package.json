@@ -12,5 +12,10 @@
     "@badeball/cypress-cucumber-preprocessor": "^12.0.0",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.1.3",
     "cypress": "^10.4.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "html": {
+      "enabled": true
+    }
   }
 }
