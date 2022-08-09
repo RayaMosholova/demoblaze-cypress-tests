@@ -23,9 +23,11 @@ Given('the user is logged in', () => {
 When('the user opens one item', () => {
     // ToDo
 })
+
 And('adds that item to the cart', () => {
     // ToDo
 })
+
 Then('the "Product added" pop up is displayed', () => {
     // ToDo
 })
@@ -66,4 +68,3 @@ Then('the total amount in the cart matches the total item prices in the cart', (
         cy.get(totalPrice).should('have.text', sum)
     })
 })
-
