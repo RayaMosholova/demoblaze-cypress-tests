@@ -1,5 +1,5 @@
 import { Given, When, Then, And, } from '@badeball/cypress-cucumber-preprocessor'
-import { aboutUsVideoModal, navMenuButton } from '../../support/page-objects/homepage'
+import { aboutUsVideoModal, navMenuButton } from '../../../support/page-objects/homepage'
 
 Given('the user is on the homepage', () => {
     cy.visit('/')

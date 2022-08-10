@@ -1,6 +1,6 @@
 import { Given, When, Then, And } from '@badeball/cypress-cucumber-preprocessor'
-import { defaultUser } from '../../fixtures/users.json'
-import products from '../../fixtures/products.json'
+import { defaultUser } from '../../../fixtures/users.json'
+import products from '../../../fixtures/products.json'
 
 Given('the user in authorized', () => {
     const { username, password } = defaultUser

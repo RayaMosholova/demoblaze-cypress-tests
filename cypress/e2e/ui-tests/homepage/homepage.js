@@ -1,5 +1,5 @@
 import { Then, And, Given } from '@badeball/cypress-cucumber-preprocessor'
-import { categoriesList, itemsOnHomepage } from '../../support/page-objects/homepage'
+import { categoriesList, itemsOnHomepage } from '../../../support/page-objects/homepage'
 
 Given('the user is on the homepage', () => {
   cy.visit('/')
