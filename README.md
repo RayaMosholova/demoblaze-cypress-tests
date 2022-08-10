@@ -1,5 +1,5 @@
 ## Introduction 
-This project contains API and UI tests for Demoblaze application implemented with Cypress and Cucumber.
+This project contains API and UI tests for Demoblaze application implemented with Cypress 10 and Cucumber.
 
 ## Setup
 1.	Clone the repo:
