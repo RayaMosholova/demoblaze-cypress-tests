@@ -5,7 +5,7 @@ import { defaultUser } from '../../../fixtures/users.json'
 import products from '../../../fixtures/products.json'
 
 Given('the user is logged in', () => {
-    // the below programatic login is made in order to be able to empty the cart for the logged user further in the tests 
+    // the below programatic login is made in order to be able to empty the cart for the logged user further in the test 
     const { username, password } = defaultUser
     const encodedPassword = btoa(password)
     cy.request('POST', 'https://api.demoblaze.com/login', {
@@ -19,18 +19,6 @@ Given('the user is logged in', () => {
     })
 
     cy.login(defaultUser)
-})
-
-When('the user opens one item', () => {
-    // ToDo
-})
-
-And('adds that item to the cart', () => {
-    // ToDo
-})
-
-Then('the "Product added" pop up is displayed', () => {
-    // ToDo
 })
 
 And('the shopping cart is empty', () => {
