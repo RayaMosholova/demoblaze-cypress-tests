@@ -2,6 +2,7 @@ import { Given, When, Then, And } from '@badeball/cypress-cucumber-preprocessor'
 import { cartItems, priceRows, totalPrice } from '../../../support/page-objects/cart'
 import { addItemsToCart, navMenuButton } from '../../../support/page-objects/homepage'
 import { defaultUser } from '../../../fixtures/users.json'
+import products from '../../../fixtures/products.json'
 
 Given('the user is logged in', () => {
     // the below programatic login is made in order to be able to empty the cart for the logged user further in the tests 
@@ -49,7 +50,7 @@ And('the shopping cart is empty', () => {
 })
 
 When('the user adds few items in the cart', () => {
-    const items = ['Samsung galaxy s6', 'Samsung galaxy s7', 'Nexus 6']
+    const items = [products.galaxyS6.title, products.htc.title]
     cy.visit('/')
     addItemsToCart(items)
 })
@@ -59,7 +60,7 @@ And('the user goes to the cart page', () => {
 })
 
 Then('the total amount in the cart matches the total item prices in the cart', () => {
-    cy.get(cartItems).as('cartItems').should('have.length', 3)
+    cy.get(cartItems).as('cartItems').should('have.length', 2)
     cy.get('@cartItems').then(rows => {
         let sum = 0
         rows.find(priceRows).toArray().forEach(cell => {
