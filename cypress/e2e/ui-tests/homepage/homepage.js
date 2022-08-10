@@ -12,7 +12,7 @@ Then('the user can see only 3 categories available', () => {
 And('the categories are Phones, Laptops, and Monitors', () => {
   cy.get(categoriesList).then(categories => {
     const expectedCategories = ["Phones", "Laptops", "Monitors"]
-    expect(categories.toArray().map(o => o.innerText)).to.have.members(expectedCategories)
+    expect(categories.toArray().map(category => category.innerText)).to.have.members(expectedCategories)
   })
 })
 
